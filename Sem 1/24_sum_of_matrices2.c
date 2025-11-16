@@ -21,8 +21,10 @@ int main(void)
     if (!A || !B || !S)
         return 1;
 
-    for (int i = 0; i < total; i++) A[i] = A_vals[i];
-    for (int i = 0; i < total; i++) B[i] = B_vals[i];
+    for (int i = 0; i < total; i++)
+        A[i] = A_vals[i];
+    for (int i = 0; i < total; i++)
+        B[i] = B_vals[i];
 
     printf("Matrix A:\n");
     for (int i = 0; i < total; i++)

@@ -7,21 +7,12 @@
 
 int main(void)
 {
-    double length, width;
-    printf("Enter length: ");
-    if (scanf("%lf", &length) != 1 || length < 0)
-    {
-        printf("Invalid length.\n");
-        return 1;
-    }
-    printf("Enter width: ");
-    if (scanf("%lf", &width) != 1 || width < 0)
-    {
-        printf("Invalid width.\n");
-        return 1;
-    }
+    /* Hardcoded length and width (no user input). */
+    double length = 5.0; /* example length */
+    double width = 2.5;  /* example width */
 
     double area = length * width;
+    printf("Length = %.6g, Width = %.6g\n", length, width);
     printf("Area of rectangle: %.6g\n", area);
     return 0;
 }

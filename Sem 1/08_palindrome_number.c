@@ -7,13 +7,8 @@
 
 int main(void)
 {
-    int num;
-    printf("Enter an integer: ");
-    if (scanf("%d", &num) != 1)
-    {
-        printf("Invalid input.\n");
-        return 1;
-    }
+    /* Hardcoded example number (no user input). */
+    int num = 1221;
 
     int original = num;
     int reversed = 0;

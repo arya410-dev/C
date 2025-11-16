@@ -7,13 +7,10 @@
 
 int main(void)
 {
-    int x, y;
-    printf("Enter two integers (x y): ");
-    if (scanf("%d %d", &x, &y) != 2)
-    {
-        printf("Invalid input.\n");
-        return 1;
-    }
+    /* Hardcoded values (no user input). */
+    int x = 42;
+    int y = 27;
+
     if (x > y)
         printf("%d is greater than %d\n", x, y);
     else if (y > x)

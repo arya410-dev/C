@@ -17,9 +17,12 @@ int main(void)
     long long product = (long long)a * b * c * d;
     printf("Product of %ld, %ld, %ld and %ld is %lld\n", a, b, c, d, product);
 
-    if (b == 0 || d == 0) {
+    if (b == 0 || d == 0)
+    {
         printf("Cannot perform divisions: division by zero detected.\n");
-    } else {
+    }
+    else
+    {
         double div1 = (double)a / b;
         double div2 = (double)c / d;
         printf("a / b = %.6g\n", div1);

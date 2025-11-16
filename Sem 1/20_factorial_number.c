@@ -7,13 +7,8 @@
 
 int main(void)
 {
-    int n;
-    printf("Enter a non-negative integer: ");
-    if (scanf("%d", &n) != 1 || n < 0)
-    {
-        printf("Invalid input.\n");
-        return 1;
-    }
+    /* Hardcoded example (no user input). */
+    int n = 6; /* compute 6! */
 
     unsigned long long fact = 1;
     for (int i = 2; i <= n; i++)

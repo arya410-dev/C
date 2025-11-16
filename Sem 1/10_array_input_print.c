@@ -8,29 +8,14 @@
 
 int main(void)
 {
-    int n;
-    printf("How many elements? ");
-    if (scanf("%d", &n) != 1 || n <= 0)
-    {
-        printf("Invalid size.\n");
-        return 1;
-    }
+    /* Hardcoded example array (no user input). */
+    int arr[] = {1, 2, 3, 4, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-    int *arr = malloc(sizeof(int) * n);
-    if (!arr)
-        return 1;
-
-    for (int i = 0; i < n; i++)
-    {
-        printf("Enter element %d: ", i);
-        scanf("%d", &arr[i]);
-    }
-
-    printf("\nElements:\n");
+    printf("Elements:\n");
     for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
     printf("\n");
 
-    free(arr);
     return 0;
 }

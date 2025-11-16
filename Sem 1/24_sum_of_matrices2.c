@@ -8,25 +8,29 @@
 
 int main(void)
 {
-    int r, c;
-    printf("Enter rows and columns: ");
-    if (scanf("%d %d", &r, &c) != 2 || r <= 0 || c <= 0)
-        return 1;
-
+    /* Hardcoded example matrices (no runtime input). */
+    int r = 2, c = 2;
     int total = r * c;
+
+    int A_vals[] = {1, 2, 3, 4};
+    int B_vals[] = {4, 3, 2, 1};
+
     int *A = malloc(sizeof(int) * total);
     int *B = malloc(sizeof(int) * total);
     int *S = malloc(sizeof(int) * total);
     if (!A || !B || !S)
         return 1;
 
-    printf("Enter elements of matrix A (%dx%d) row-wise:\n", r, c);
-    for (int i = 0; i < total; i++)
-        scanf("%d", &A[i]);
+    for (int i = 0; i < total; i++) A[i] = A_vals[i];
+    for (int i = 0; i < total; i++) B[i] = B_vals[i];
 
-    printf("Enter elements of matrix B (%dx%d) row-wise:\n", r, c);
+    printf("Matrix A:\n");
     for (int i = 0; i < total; i++)
-        scanf("%d", &B[i]);
+        printf("%d%s", A[i], (i % c) == c - 1 ? "\n" : " ");
+
+    printf("Matrix B:\n");
+    for (int i = 0; i < total; i++)
+        printf("%d%s", B[i], (i % c) == c - 1 ? "\n" : " ");
 
     printf("Sum matrix:\n");
     for (int i = 0; i < total; i++)

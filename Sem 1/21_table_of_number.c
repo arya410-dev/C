@@ -7,10 +7,8 @@
 
 int main(void)
 {
-    int n;
-    printf("Enter number: ");
-    if (scanf("%d", &n) != 1)
-        return 1;
+    /* Hardcoded example number (no user input). */
+    int n = 7;
 
     for (int i = 1; i <= 10; i++)
         printf("%d x %d = %d\n", n, i, n * i);

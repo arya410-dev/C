@@ -8,10 +8,11 @@
 
 int main(void)
 {
-    int r, c;
-    printf("Enter rows and columns: ");
-    if (scanf("%d %d", &r, &c) != 2 || r <= 0 || c <= 0)
-        return 1;
+    /* Hardcoded example matrices (no runtime input). */
+    int r = 2, c = 3;
+
+    int A_vals[] = {1, 2, 3, 4, 5, 6};
+    int B_vals[] = {6, 5, 4, 3, 2, 1};
 
     int **A = malloc(sizeof(int *) * r);
     int **B = malloc(sizeof(int *) * r);
@@ -25,15 +26,26 @@ int main(void)
         S[i] = malloc(sizeof(int) * c);
     }
 
-    printf("Enter elements of matrix A (%dx%d):\n", r, c);
-    for (int i = 0; i < r; i++)
-        for (int j = 0; j < c; j++)
-            scanf("%d", &A[i][j]);
+    /* populate matrices row-wise */
+    for (int i = 0, k = 0; i < r; i++)
+        for (int j = 0; j < c; j++, k++)
+            A[i][j] = A_vals[k];
 
-    printf("Enter elements of matrix B (%dx%d):\n", r, c);
-    for (int i = 0; i < r; i++)
-        for (int j = 0; j < c; j++)
-            scanf("%d", &B[i][j]);
+    for (int i = 0, k = 0; i < r; i++)
+        for (int j = 0; j < c; j++, k++)
+            B[i][j] = B_vals[k];
+
+    printf("Matrix A:\n");
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) printf("%d ", A[i][j]);
+        printf("\n");
+    }
+
+    printf("Matrix B:\n");
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) printf("%d ", B[i][j]);
+        printf("\n");
+    }
 
     printf("Sum matrix:\n");
     for (int i = 0; i < r; i++)
